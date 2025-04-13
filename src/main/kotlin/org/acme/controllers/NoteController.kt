@@ -13,7 +13,7 @@ class AppResource @Inject constructor(
     private val noteService: NoteService
 ) {
 
-    @Path("/note")
+    @Path("/notes")
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
@@ -22,7 +22,7 @@ class AppResource @Inject constructor(
         return Response.status(Status.CREATED).entity(createdNote).build()
     }
 
-    @Path("/note/{id}")
+    @Path("/notes/{id}")
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
@@ -31,19 +31,19 @@ class AppResource @Inject constructor(
         return Response.status(Status.OK).entity(updatedNote).build()
     }
 
-    @Path("/note/{id}")
+    @Path("/notes/{id}")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     fun getNote(@PathParam("id") noteId: Int): Response {
         val note = noteService.getNote(noteId)
-        return Response.status(Status.FOUND).entity(note).build()
+        return Response.status(Status.OK).entity(note).build()
     }
 
-    @Path("/note/{id}")
+    @Path("/notes/{id}")
     @DELETE
     @Produces(MediaType.TEXT_PLAIN)
     fun deleteNote(@PathParam("id") noteId: Int): Response {
         noteService.deleteNote(noteId)
-        return Response.ok("Note deleted.").build()
+        return Response.status(Status.NO_CONTENT).build()
     }
 }

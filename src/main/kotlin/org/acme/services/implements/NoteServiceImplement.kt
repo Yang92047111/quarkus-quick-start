@@ -15,7 +15,7 @@ class NoteServiceImpl @Inject constructor(
 
     @Transactional
     override fun createNote(note: Note): Note {
-        noteRepo.persistAndFlush(note)
+        noteRepo.persist(note)
         return note
     }
 
