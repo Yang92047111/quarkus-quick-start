@@ -65,4 +65,5 @@ jobs:
           QUARKUS_DATASOURCE_JDBC_URL: jdbc:mysql://localhost:3306/quarkus_crud
           QUARKUS_DATASOURCE_USERNAME: root
           QUARKUS_DATASOURCE_PASSWORD: root
+          QUARKUS_HIBERNATE_ORM_DATABASE_GENERATION: drop-and-create
         run: mvn verify
