@@ -12,7 +12,7 @@ import org.acme.BaseTest
 
 @QuarkusTest
 @TestMethodOrder(OrderAnnotation::class)
-class NoteResourceIT : BaseTest() {
+class NoteResourceIT: BaseTest() {
 
     private val noteJson = """
         {

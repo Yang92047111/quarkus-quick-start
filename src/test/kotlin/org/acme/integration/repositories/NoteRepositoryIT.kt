@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test
 
 @QuarkusTest
 @Transactional
-class NoteRepositoryIT : BaseTest() {
+class NoteRepositoryIT: BaseTest() {
 
     @Inject
     lateinit var noteRepository: NoteRepository
